@@ -25,27 +25,30 @@ for n in range (1,x+1,1):
     sum=sum*n
 print(sum)
 '''
-str_numb=[1,2,3,4,5]
+str_numb=[5,6,7,8,9]
+count=0
+count_true=0
 #print(str_numb)
-new_str=0
-count=-1
 while True:
     numb_ = int(input("input numb : "))
-    count = -1
-
-    for x in str_numb:
-        count = count + 1
-        print(count)
-        print(str_numb)
-
-        if (x == numb_):
-            del str_numb[count]
+    count=count+1
+    if numb_<1 or numb_>60:
+        print("you enter a wrong number")
+        continue
+    if count==10:
+        print("you try too many time ->bye bye ")
+        break
+    if numb_ in str_numb:
+        count_true=count_true+1
+        if count_true==2:
+            print("you are very good")
             break
-        else:
-            continue
+        str_numb.remove(numb_)
+        print(str_numb)
+    else:
+        print(str_numb)
+        continue
+
     if(len(str_numb)==0):
         print('stop')
         break
-
-
-
